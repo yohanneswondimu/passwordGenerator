@@ -1,0 +1,77 @@
+body {
+  background: rgb(2, 2, 60);
+  color: bisque;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 300px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.display input {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: bisque;
+  flex-grow: 1;
+  margin-right: 10px;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.display input::placeholder {
+  color: rgba(255, 228, 196, 0.7);
+}
+
+.display img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+button img {
+  width: 20px;
+  filter: brightness(0) invert(1); /* Change image color to yellow */
+  margin-left: 10px; /* Add spacing between text and image */
+}
+button {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center; /* Center the text inside the button */
+  align-items: center; /* Vertically center the text */
+  color: bisque;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin-left: 25%;
+  border: 2px solid yellow; /* Added border property */
+  background: green;
+  border-radius: 25px; /* Fully rounded edges */
+  padding: 10px 20px; /* Add padding for better spacing */
+  cursor: pointer; /* Add pointer cursor for better UX */
+  transition: background 0.3s ease; /* Smooth hover effect */
+}
+
+button:hover {
+  background: darkgreen; /* Change background color on hover */
+}

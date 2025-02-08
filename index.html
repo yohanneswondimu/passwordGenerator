@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Password Generator</h1>
+    <div class="display">
+      <input type="text" id="password" placeholder="Password" readonly>
+      <img src="img/copy.png" alt="Copy Icon" id="copyImg">
+    </div>
+    <button onclick="createPassword()">Generate Password <img src="img/arrow.webp" alt="Arrow Icon"></button>
+  </div>
+  <script>
+    const passwordBox = document.getElementById("password");
+    const copyImg = document.getElementById("copyImg");
+    const length = 16;
+    const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const lowerCase = "abcdefghijklmnopqrstuvwxyz";
+    const number = "0123456789";
+    const symbol = "!@#$%^&*()";
+    const allChars = upperCase + lowerCase + symbol + number;
+
+    function createPassword() {
+      let password = "";
+      password += upperCase[Math.floor(Math.random() * upperCase.length)];
+password += number[Math.floor(Math.random() * number.length)];
+      password += lowerCase[Math.floor(Math.random() * lowerCase.length)];
+      
+      password += symbol[Math.floor(Math.random() * symbol.length)];
+
+      
+      while (  length > password.length) {  
+        password += allChars[Math.floor(Math.random() * allChars.length)];  
+      }
+      passwordBox.value = password;  // Display the generated password in the input field
+    }
+
+    copyImg.addEventListener('click', () => {
+    // Select the text in the password input
+    passwordBox.select();
+
+    // Check if the input is empty
+    if (passwordBox.value === "") {
+        alert('No password generated');
+    } else {
+        // Execute the copy command
+        document.execCommand('copy');
+
+        // Notify the user that the password has been copied
+        alert('Password copied to clipboard!');
+    }
+});
+
+  </script>
+</body>
+</html>
